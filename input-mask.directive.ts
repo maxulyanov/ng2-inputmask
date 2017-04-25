@@ -39,12 +39,7 @@ export class InputMaskDirective {
    */
   @HostListener('input')
   public onChange(): void {
-    let value = this.getValue();
-    if(this.state.value.length > value.length) {
-      value = this.getClearValue(value);
-    }
-    
-    this.applyMask(value);
+    this.applyMask(this.getClearValue(this.getValue()));
   }
 
   /**
@@ -102,6 +97,11 @@ export class InputMaskDirective {
       maskPosition++;
     }
 
+    const nextMaskElement = this.mask[maskPosition];
+    if(nextMaskElement != null && /^[-\/\\^$#&@№:<>_\^!*+?.()|\[\]{}]/.test(nextMaskElement)) {
+      newValue += nextMaskElement;
+    }
+
     const oldValue = this.state.value;
     const cursorPosition = this.getCursorPosition();
     this.setValue(newValue);
@@ -130,8 +130,9 @@ export class InputMaskDirective {
     return null;
   }
 
+
   /**
-   * 
+   *
    * @returns {any}
    */
   private getValue(): string {
@@ -144,7 +145,7 @@ export class InputMaskDirective {
    * @returns {string}
    */
   private getClearValue(value): string {
-    return value.trim().replace( /[-\/\\^$#&@№:<>_\^!*+?.()|[\]{}]/gi, '');
+    return value.trim().replace(/[-\/\\^$#&@№:<>_\^!*+?.()|\[\]{}]/gi, '');
   }
 
   /**
