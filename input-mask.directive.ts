@@ -98,7 +98,7 @@ export class InputMaskDirective {
     }
 
     const nextMaskElement = this.mask[maskPosition];
-    if(nextMaskElement != null && /^[-\/\\^$#&@№:<>_\^!*+?.()|\[\]{}]/.test(nextMaskElement)) {
+    if(value.length && nextMaskElement != null && /^[-\/\\^$#&@№:<>_\^!*+?.()|\[\]{}]/.test(nextMaskElement)) {
       newValue += nextMaskElement;
     }
 
@@ -107,7 +107,7 @@ export class InputMaskDirective {
     this.setValue(newValue);
     this.state.value = newValue;
 
-    if(oldValue.length >= newValue.length) {
+    if(oldValue.length >= cursorPosition) {
       this.setCursorPosition(cursorPosition);
     }
 
