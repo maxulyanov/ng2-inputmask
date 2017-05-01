@@ -1,6 +1,6 @@
 {
   "name": "ng2-inputmask",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "Angular 2 input mask",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
