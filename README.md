@@ -1,7 +1,8 @@
-# Angular 2 directive input mask
-[![npm](https://img.shields.io/npm/dt/ng2-inputmask.svg)](https://www.npmjs.com/package/my-tooltip)
-[![npm](https://img.shields.io/npm/v/ng2-inputmask.svg)](https://www.npmjs.com/package/my-tooltip)
-
+ng2-inputmask
+[![npm](https://img.shields.io/npm/dt/ng2-inputmask.svg)](https://www.npmjs.com/package/ng2-inputmask)
+[![npm](https://img.shields.io/npm/v/ng2-inputmask.svg)](https://www.npmjs.com/package/ng2-inputmask)
+===============
+Angular 2 directive input mask
 
 ## Install
 ```bash
