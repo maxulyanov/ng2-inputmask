@@ -1,4 +1,4 @@
-import { Directive, HostListener, Input, ElementRef } from '@angular/core';
+import { Directive, HostListener, Input, ElementRef, EventEmitter, Output } from '@angular/core';
 
 
 const placeholders = {
@@ -22,6 +22,7 @@ export class InputMaskDirective {
   private state: iState;
 
   @Input() mask: any;
+  @Output() ngModelChange = new EventEmitter();
 
   /**
    *
@@ -50,8 +51,22 @@ export class InputMaskDirective {
   public onKeyPress(event): void {
     const cursorPosition = this.getCursorPosition();
     let regexp = this.createRegExp(cursorPosition);
-    if(regexp != null && !regexp.test(event.key)) {
+    if(regexp != null && !regexp.test(event.key) || this.getValue().length >= this.mask.length) {
       event.preventDefault();
+    }
+  }
+
+  /**
+   *
+   * @param event
+   */
+  @HostListener('keydown', ['$event'])
+  public onKeyDown(event): void {
+    const key = event.keyCode || event.charCode;
+    if((key == 8 || key == 46) && this.getClearValue(this.getValue()).length === 1) {
+      this.setValue('');
+      this.state.value = '';
+      this.ngModelChange.emit('');
     }
   }
 
