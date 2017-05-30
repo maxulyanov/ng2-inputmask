@@ -30,5 +30,4 @@ Desktop.ini
 **/*.ngfactory.ts
 
 # Library files
-src/*
 build/*
