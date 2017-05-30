@@ -1,0 +1,32 @@
+{
+  "name": "ng2-inputmask",
+  "version": "0.1.4",
+  "description": "Angular 2 input mask",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/M-Ulyanov/ng2-inputmask"
+  },
+  "author": {
+    "name": "M Ulyanov"
+  },
+  "keywords": [
+    "angular 2",
+    "input mask",
+    "typescript",
+    "ng2 directive",
+    "input directive",
+    "ng2 mask",
+    "ng2 input",
+    "angular 2 input mask"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/M-Ulyanov/ng2-inputmask/issues"
+  },
+  "module": "ng2-inputmask.js",
+  "typings": "ng2-inputmask.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0"
+  }
+}

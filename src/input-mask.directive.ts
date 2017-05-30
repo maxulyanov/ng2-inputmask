@@ -1,4 +1,5 @@
-import { Directive, HostListener, Input, ElementRef, EventEmitter, Output } from '@angular/core';
+import { Directive, HostListener, Input, ElementRef, OnInit, EventEmitter, Output } from '@angular/core';
+import { NgModel } from '@angular/forms';
 
 
 const placeholders = {
@@ -7,19 +8,16 @@ const placeholders = {
 };
 
 
-interface iState {
-  value: string
+interface IState {
+  value: string;
 }
-
 
 @Directive({
   selector: '[mask]'
 })
+export class InputMaskDirective implements OnInit {
 
-
-export class InputMaskDirective {
-
-  private state: iState;
+  private state: IState;
 
   @Input() mask: any;
   @Output() ngModelChange = new EventEmitter();
@@ -27,8 +25,9 @@ export class InputMaskDirective {
   /**
    *
    * @param element
+   * @param model
    */
-  constructor(private element: ElementRef) {
+  constructor(private element: ElementRef, private model: NgModel) {
     this.state = {
       value: this.getValue()
     };
@@ -85,26 +84,24 @@ export class InputMaskDirective {
     let newValue = '';
     let maskPosition = 0;
 
-    if(this.getClearValue(value).length > this.getClearValue(this.mask).length) {
+    if (this.getClearValue(value).length > this.getClearValue(this.mask).length) {
       this.setValue(this.state.value);
       return;
     }
 
-    for(let i = 0; i < value.length; i++) {
+    for (let i = 0; i < value.length; i++) {
       let current = value[i];
 
       let regexp = this.createRegExp(maskPosition);
-      if(regexp != null) {
-        if(!regexp.test(current)) {
+      if (regexp != null) {
+        if (!regexp.test(current)) {
           this.setValue(this.state.value);
           break;
         }
         newValue += current;
-      }
-      else if(this.mask[maskPosition] === current) {
+      } else if (this.mask[maskPosition] === current) {
         newValue += current;
-      }
-      else {
+      } else {
         newValue += this.mask[maskPosition];
         i--;
       }
@@ -113,7 +110,7 @@ export class InputMaskDirective {
     }
 
     const nextMaskElement = this.mask[maskPosition];
-    if(value.length && nextMaskElement != null && /^[-\/\\^$#&@№:<>_\^!*+?.()|\[\]{}]/.test(nextMaskElement)) {
+    if (value.length && nextMaskElement != null && /^[-\/\\^$#&@№:<>_\^!*+?.()|\[\]{}]/.test(nextMaskElement)) {
       newValue += nextMaskElement;
     }
 
@@ -122,7 +119,7 @@ export class InputMaskDirective {
     this.setValue(newValue);
     this.state.value = newValue;
 
-    if(oldValue.length >= cursorPosition) {
+    if (oldValue.length >= cursorPosition) {
       this.setCursorPosition(cursorPosition);
     }
 
@@ -134,12 +131,14 @@ export class InputMaskDirective {
    * @returns {any}
    */
   private createRegExp(position): RegExp | null {
-    if(this.mask[position] == null) return null;
+    if (this.mask[position] == null) {
+      return null;
+    }
 
     const currentSymbol = this.mask[position].toUpperCase();
     const keys = Object.keys(placeholders);
     const searchPosition = keys.indexOf(currentSymbol);
-    if(searchPosition >= 0) {
+    if (searchPosition >= 0) {
       return new RegExp(placeholders[keys[searchPosition]], 'gi');
     }
     return null;
@@ -169,6 +168,7 @@ export class InputMaskDirective {
    */
   private setValue(value: string): void {
     this.element.nativeElement.value = value;
+    this.model.update.emit(value);
   }
 
   /**
@@ -189,3 +189,4 @@ export class InputMaskDirective {
   }
 
 }
+
