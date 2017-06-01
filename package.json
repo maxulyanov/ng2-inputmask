@@ -1,6 +1,6 @@
 {
   "name": "ng2-inputmask",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Angular 2 input mask",
   "scripts": {
     "build": "gulp build",
@@ -12,7 +12,7 @@
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
     "test": "tsc && karma start"
   },
-  "main": "./src/index.ts",
+  "main": "./src/input-mask.module.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/M-Ulyanov/ng2-inputmask"

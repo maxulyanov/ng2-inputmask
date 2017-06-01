@@ -1,5 +1,4 @@
 import { Directive, HostListener, Input, ElementRef, OnInit, EventEmitter, Output } from '@angular/core';
-import { NgModel } from '@angular/forms';
 
 
 const placeholders = {
@@ -27,7 +26,7 @@ export class InputMaskDirective implements OnInit {
    * @param element
    * @param model
    */
-  constructor(private element: ElementRef, private model: NgModel) {
+  constructor(private element: ElementRef) {
     this.state = {
       value: this.getValue()
     };
@@ -168,7 +167,6 @@ export class InputMaskDirective implements OnInit {
    */
   private setValue(value: string): void {
     this.element.nativeElement.value = value;
-    this.model.update.emit(value);
   }
 
   /**
