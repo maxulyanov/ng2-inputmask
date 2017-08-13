@@ -6,6 +6,13 @@ const placeholders = {
   '0': '\\d'
 };
 
+const keys = {
+  'BACKSPACE': 8,
+  'LEFT': 37,
+  'RIGHT': 39,
+  'DEL': 46,
+};
+
 
 interface IState {
   value: string;
@@ -47,6 +54,9 @@ export class InputMaskDirective implements OnInit {
    */
   @HostListener('keypress', ['$event'])
   public onKeyPress(event): void {
+    const key = this.getKey(event);
+    if(key === keys.BACKSPACE ||key === keys.LEFT || key === keys.RIGHT) return;
+
     const cursorPosition = this.getCursorPosition();
     let regexp = this.createRegExp(cursorPosition);
     if(regexp != null && !regexp.test(event.key) || this.getValue().length >= this.mask.length) {
@@ -60,8 +70,8 @@ export class InputMaskDirective implements OnInit {
    */
   @HostListener('keydown', ['$event'])
   public onKeyDown(event): void {
-    const key = event.keyCode || event.charCode;
-    if((key == 8 || key == 46) && this.getClearValue(this.getValue()).length === 1) {
+    const key = this.getKey(event);
+    if((key === keys.BACKSPACE || key === keys.DEL) && this.getClearValue(this.getValue()).length === 1) {
       this.setValue('');
       this.state.value = '';
       this.ngModelChange.emit('');
@@ -73,6 +83,15 @@ export class InputMaskDirective implements OnInit {
    */
   public ngOnInit(): void {
     this.applyMask(this.getClearValue(this.getValue()));
+  }
+
+  /**
+   *
+   * @param event
+   * @returns {number}
+   */
+  private getKey(event) {
+    return event.keyCode || event.charCode;
   }
 
   /**
