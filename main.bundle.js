@@ -1,6 +1,6 @@
 webpackJsonp([1,4],{
 
-/***/ 149:
+/***/ 151:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(27)();
@@ -21,19 +21,19 @@ module.exports = module.exports.toString();
 /***/ 152:
 /***/ (function(module, exports) {
 
-module.exports = "<a class=\"main-title\" href=\"https://github.com/M-Ulyanov/ng2-inputmask\">Angular 2 inputmask</a>\n\n\n<div class=\"container\">\n    <div class=\"title\">Date</div>\n    <md-input-container>\n        <input mdInput placeholder=\"00/00/0000\" mask=\"00/00/0000\">\n    </md-input-container>\n</div>\n\n<div class=\"container\">\n    <div class=\"title\">Time</div>\n    <md-input-container>\n        <input mdInput placeholder=\"00:00:00\" mask=\"00:00:00\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">Date and time</div>\n    <md-input-container>\n        <input mdInput placeholder=\"00/00/0000 00:00:00\" mask=\"00/00/0000 00:00:00\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">IP Address</div>\n    <md-input-container>\n        <input mdInput placeholder=\"000.000.000.000\" mask=\"000.000.000.000\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">Phone</div>\n    <md-input-container>\n        <input mdInput placeholder=\"000-00-00\" mask=\"000-00-00\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">Phone with code</div>\n    <md-input-container>\n        <input mdInput placeholder=\"+7(000) 000-00-00\" mask=\"+7(000) 000-00-00\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">Product Key</div>\n    <md-input-container>\n        <input mdInput placeholder=\"A00-000-AAA-0AA\" mask=\"A00-000-AAA-0AA\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">Postal code</div>\n    <md-input-container>\n        <input mdInput placeholder=\"00000-00000\" mask=\"00000-00000\">\n    </md-input-container>\n</div>\n\n<div class=\"container\">\n    <div class=\"title\">Credit Card</div>\n    <md-input-container>\n        <input mdInput placeholder=\"0000-0000-0000-0000\" mask=\"0000-0000-0000-0000\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">Date default value</div>\n    <md-input-container>\n        <input mdInput placeholder=\"00/00/0000\" value=\"24042017\" mask=\"00/00/0000\">\n    </md-input-container>\n</div>\n"
+module.exports = "<a class=\"main-title\" href=\"https://github.com/M-Ulyanov/ng2-inputmask\">Angular 2 inputmask</a>\n\n\n<div class=\"container\">\n    <div class=\"title\">Date</div>\n    <md-input-container>\n        <input mdInput (ngModelChange)=\"click($event)\" [(ngModel)]=\"test\" placeholder=\"8\" mask=\"(000) 000-0000\">\n        <button (click)=\"click()\">click</button>\n    </md-input-container>\n</div>\n\n<div class=\"container\">\n    <div class=\"title\">Time</div>\n    <md-input-container>\n        <input mdInput placeholder=\"00:00:00\" mask=\"00:00:00\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">Date and time</div>\n    <md-input-container>\n        <input mdInput placeholder=\"00/00/0000 00:00:00\" mask=\"00/00/0000 00:00:00\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">IP Address</div>\n    <md-input-container>\n        <input mdInput placeholder=\"000.000.000.000\" mask=\"000.000.000.000\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">Phone</div>\n    <md-input-container>\n        <input mdInput placeholder=\"000-00-00\" mask=\"000-00-00\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">Phone with code</div>\n    <md-input-container>\n        <input mdInput placeholder=\"+7(000) 000-00-00\" mask=\"+7(000) 000-00-00\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">Product Key</div>\n    <md-input-container>\n        <input mdInput placeholder=\"A00-000-AAA-0AA\" mask=\"A00-000-AAA-0AA\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">Postal code</div>\n    <md-input-container>\n        <input mdInput placeholder=\"00000-00000\" mask=\"00000-00000\">\n    </md-input-container>\n</div>\n\n<div class=\"container\">\n    <div class=\"title\">Credit Card</div>\n    <md-input-container>\n        <input mdInput placeholder=\"0000-0000-0000-0000\" mask=\"0000-0000-0000-0000\">\n    </md-input-container>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"title\">Date default value</div>\n    <md-input-container>\n        <input mdInput placeholder=\"00/00/0000\" value=\"24042017\" mask=\"00/00/0000\">\n    </md-input-container>\n</div>\n"
 
 /***/ }),
 
-/***/ 204:
+/***/ 206:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(82);
+module.exports = __webpack_require__(83);
 
 
 /***/ }),
 
-/***/ 81:
+/***/ 82:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -42,20 +42,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 81;
+webpackEmptyContext.id = 82;
 
 
 /***/ }),
 
-/***/ 82:
+/***/ 83:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(96);
 
 
 
@@ -68,7 +68,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 92:
+/***/ 94:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -80,39 +80,44 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'app works 1!';
     }
+    AppComponent.prototype.click = function (event) {
+        console.log(event);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__(152),
-        styles: [__webpack_require__(149)]
-    })
+        styles: [__webpack_require__(151)]
+    }),
+    __metadata("design:paramtypes", [])
 ], AppComponent);
 
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 93:
+/***/ 95:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hammerjs__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_hammerjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__node_modules_ng2_inputmask__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_inputmask__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(94);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -128,26 +133,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["b" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["b" /* NgModule */])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__node_modules_ng2_inputmask__["a" /* InputMaskDirective */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["a" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["b" /* MdCheckboxModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["c" /* MdInputModule */]
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_6_ng2_inputmask__["a" /* InputMaskModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MdCheckboxModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MdInputModule */]
         ],
         providers: [],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
@@ -158,7 +162,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 94:
+/***/ 96:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -175,5 +179,5 @@ var environment = {
 
 /***/ })
 
-},[204]);
+},[206]);
 //# sourceMappingURL=main.bundle.js.map
