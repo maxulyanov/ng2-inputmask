@@ -54,6 +54,7 @@ export class InputMaskDirective implements OnInit {
    */
   @HostListener('keypress', ['$event'])
   public onKeyPress(event): void {
+    if(!this.mask) return;
     const key = this.getKey(event);
     if(key === keys.BACKSPACE ||key === keys.LEFT || key === keys.RIGHT) return;
 
@@ -99,6 +100,7 @@ export class InputMaskDirective implements OnInit {
    * @param value
    */
   private applyMask(value): void {
+    if(!this.mask) return;
     let newValue = '';
     let maskPosition = 0;
 
@@ -149,6 +151,7 @@ export class InputMaskDirective implements OnInit {
    * @returns {any}
    */
   private createRegExp(position): RegExp | null {
+    if(!this.mask) return;
     if (this.mask[position] == null) {
       return null;
     }
