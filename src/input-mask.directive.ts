@@ -11,6 +11,7 @@ const keys = {
   'LEFT': 37,
   'RIGHT': 39,
   'DEL': 46,
+    'ENTER':13
 };
 
 
@@ -61,6 +62,7 @@ export class InputMaskDirective implements OnInit {
     const cursorPosition = this.getCursorPosition();
     let regexp = this.createRegExp(cursorPosition);
     if(regexp != null && !regexp.test(event.key) || this.getValue().length >= this.mask.length) {
+        if (key === keys.ENTER) return;
       event.preventDefault();
     }
   }
